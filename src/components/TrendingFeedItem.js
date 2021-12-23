@@ -5,17 +5,17 @@ import PropTypes from 'prop-types';
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
     <div className="bg-dark">
-      {trendingFeedServerData.map((data) => (
+      {trendingFeedServerData.map((trendingVideosData) => (
         <div
-          key={data.id}
+          key={trendingVideosData.id}
           className="card bg-dark text-light flex-lg-row flex-sm-column align-items-sm-center">
           <div style={{ textAlign: 'center' }}>
             <video
               className="m-lg-5"
               controls
-              width={data.videoMeta.width / 2}
-              height={data.videoMeta.height / 2}
-              src={data.videoUrl}
+              width={trendingVideosData.videoMeta.width / 2}
+              height={trendingVideosData.videoMeta.height / 2}
+              src={trendingVideosData.videoUrl}
               frameBorder="0"
               allowFullScreen
               title="Embedded video"
@@ -24,8 +24,8 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
           <div
             className="flex-column d-flex justify-content-center align-items-center"
             style={{ width: '100%' }}>
-            <h2 className="card-title text-center mb-2 ">{data.text}</h2>
-            <Link to={'/' + data.authorMeta.name}>
+            <h2 className="card-title text-center mb-2 ">{trendingVideosData.text}</h2>
+            <Link to={'/' + trendingVideosData.authorMeta.name}>
               {' '}
               <div className="userData mt-2 mb-2 text-center">
                 <img
@@ -36,17 +36,17 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
                     marginRight: 10
                   }}
                   className="rounded"
-                  src={data.authorMeta.avatar}
-                  alt={data.authorMeta.nickName}
+                  src={trendingVideosData.authorMeta.avatar}
+                  alt={trendingVideosData.authorMeta.nickName}
                 />
                 <h3 style={{ display: 'inline' }} className="text-light">
-                  {data.authorMeta.nickName}
+                  {trendingVideosData.authorMeta.nickName}
                 </h3>
               </div>
             </Link>
             <div className="videoStats text-secondary mt-3">
-              <h4>{'❤️ Likes: ' + numberWithCommas(data.diggCount)}</h4>
-              <h4>{'💭 Comments: ' + numberWithCommas(data.commentCount)}</h4>
+              <h4>{'❤️ Likes: ' + numberWithCommas(trendingVideosData.diggCount)}</h4>
+              <h4>{'💭 Comments: ' + numberWithCommas(trendingVideosData.commentCount)}</h4>
             </div>
           </div>
         </div>
