@@ -8,7 +8,7 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
       {trendingFeedServerData.map((data) => (
         <div
           key={data.id}
-          className="card bg-dark text-light flex-lg-row flex-md-column flex-sm-column align-items-md-center align-items-sm-center">
+          className="card bg-dark text-light flex-lg-row flex-sm-column align-items-sm-center">
           <div style={{ textAlign: 'center' }}>
             <video
               className="m-lg-5"
