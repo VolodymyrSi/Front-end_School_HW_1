@@ -22,8 +22,8 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
             />
           </div>
           <div
-            className="flex-column d-flex justify-content-center align-items-center"
-            style={{ width: '100%' }}>
+            className="flex-column d-flex justify-content-center align-items-center w-100"
+            >
             <h2 className="card-title text-center mb-2 ">{trendingVideosData.text}</h2>
             <Link to={'/' + trendingVideosData.authorMeta.name}>
               {' '}
