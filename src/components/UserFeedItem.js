@@ -1,4 +1,4 @@
-import { numberWithCommas } from '../utils/Helper';
+import { numberWithCommas } from '../utils/helper';
 import PropTypes from 'prop-types';
 
 const VideoFeedItem = ({ userFeedServerData }) => {

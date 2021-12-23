@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { numberWithCommas } from '../utils/Helper';
+import { numberWithCommas } from '../utils/helper';
 
 const UserInfo = ({ user, stats }) => {
   return (
