@@ -5,30 +5,10 @@ import { useParams } from "react-router-dom";
 import { Context } from "../App";
 import VideoFeedItem from "../components/UserFeedItem";
 import UserInfo from "../components/UserInfo";
-import { userApi } from "../api-config/api";
-
-const getUserInfoData = (currentUser) => {
-  console.log(currentUser);
-  return axios
-    .request({
-      method: "GET",
-      url: `https://tiktok33.p.rapidapi.com/user/info/${currentUser}`,
-      headers: {
-        "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-        "x-rapidapi-key": userApi,
-      },
-    })
-    .then(function (response) {
-      return response.data;
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-};
+import { getUserInfoData } from "../api/apiRequest";
+import { MAX_POSTS } from "../constants";
 
 const UserFeed = () => {
-  const MAX_POSTS = 29;
-
   const { setIsLoading, isLoading } = useContext(Context);
   const params = useParams();
 
@@ -58,7 +38,6 @@ const UserFeed = () => {
         setIsLoading(false);
       });
     }
-    // eslint-disable-next-line
   }, [params]);
 
   return (

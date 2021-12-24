@@ -1,10 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, createContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import UserFeed from './pages/UserFeed';
-import TrendingFeed from './pages/TrendingFeed';
-import * as ReactBootStrap from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, createContext } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import UserFeed from "./pages/UserFeed";
+import TrendingFeed from "./pages/TrendingFeed";
+import { Spinner } from "react-bootstrap";
 
 export const Context = createContext();
 
@@ -18,9 +18,9 @@ function App() {
           <Route path="/:currentUser" element={<UserFeed />} />
         </Routes>
         {isLoading && (
-          <ReactBootStrap.Spinner
+          <Spinner
             animation="border"
-            style={{ position: 'fixed', top: '50%', left: '50%' }}
+            style={{ position: "fixed", top: "50%", left: "50%" }}
           />
         )}
       </div>
