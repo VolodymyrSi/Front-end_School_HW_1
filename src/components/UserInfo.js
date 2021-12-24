@@ -7,11 +7,7 @@ const UserInfo = ({ user, stats }) => {
       {user && (
         <div>
           <h2 className="text-center">{user.nickname}</h2>
-          <img
-            style={{ width: 200 }}
-            src={user.avatarLarger}
-            alt={user.nickname}
-          />
+          <img className="w-200" src={user.avatarLarger} alt={user.nickname} />
         </div>
       )}
       {stats && (

@@ -1,11 +1,10 @@
-import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Context } from "../App";
 import TrendingFeedItem from "../components/TrendingFeedItem";
-import { userApi } from "../api/api";
-import {getTrendingFeedData} from "../api/apiRequest";
+import { getTrendingFeedData } from "../api/apiRequest";
+import LoadingSpinner from "../utils/LoadingSpinner";
 
-const TrendingFeed = () => {
+const TrendingFeedPage = () => {
   const { setIsLoading, isLoading } = useContext(Context);
   const [trendingFeedServerData, setTrendingFeedServerData] = useState([]);
 
@@ -21,9 +20,13 @@ const TrendingFeed = () => {
 
   return (
     <div>
-      <TrendingFeedItem trendingFeedServerData={trendingFeedServerData} />
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <TrendingFeedItem trendingFeedServerData={trendingFeedServerData} />
+      )}
     </div>
   );
 };
 
-export default TrendingFeed;
+export default TrendingFeedPage;

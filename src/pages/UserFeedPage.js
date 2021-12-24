@@ -7,8 +7,9 @@ import VideoFeedItem from "../components/UserFeedItem";
 import UserInfo from "../components/UserInfo";
 import { getUserInfoData } from "../api/apiRequest";
 import { MAX_POSTS } from "../constants";
+import LoadingSpinner from "../utils/LoadingSpinner";
 
-const UserFeed = () => {
+const UserFeedPage = () => {
   const { setIsLoading, isLoading } = useContext(Context);
   const params = useParams();
 
@@ -25,13 +26,6 @@ const UserFeed = () => {
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
-      setIsLoading(true);
-    }
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
     if (params.currentUser) {
       getUserInfoData(params.currentUser).then((userInfoData) => {
         setUserDataServerData(userInfoData);
@@ -42,7 +36,11 @@ const UserFeed = () => {
 
   return (
     <div>
-      <UserInfo {...userDataServerData} />
+      {isLoading ? (
+          <LoadingSpinner/>
+      ) : (
+        <UserInfo {...userDataServerData} />
+      )}
       {dummyUserData && (
         <VideoFeedItem userFeedServerData={dummyUserData.slice(0, MAX_POSTS)} />
       )}
@@ -50,4 +48,4 @@ const UserFeed = () => {
   );
 };
 
-export default UserFeed;
+export default UserFeedPage;
