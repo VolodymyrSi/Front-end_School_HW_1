@@ -1,5 +1,6 @@
 import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
+import Video from "./subcomponents/Video";
 
 const VideoFeedItem = ({ userFeedServerData }) => {
   return (
@@ -9,18 +10,12 @@ const VideoFeedItem = ({ userFeedServerData }) => {
           key={userFeedVideos.id}
           className="card bg-dark text-light flex-lg-row flex-md-column flex-sm-column align-items-md-center align-items-sm-center"
         >
-          <div style={{ textAlign: "center" }}>
-            <video
-              className="m-lg-5"
-              controls
-              width={userFeedVideos.video.width / 2}
-              height={userFeedVideos.video.height / 2}
-              src={userFeedVideos.video.playAddr}
-              frameBorder="0"
-              allowFullScreen
-              title="Embedded video"
-            />
-          </div>
+          <Video
+            width={userFeedVideos.video.width / 2}
+            height={userFeedVideos.video.height / 2}
+            src={userFeedVideos.video.playAddr}
+          />
+
           <div
             className="flex-column d-flex justify-content-center align-items-center"
             style={{ width: "100%" }}

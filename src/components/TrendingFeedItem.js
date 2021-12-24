@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
+import Video from "./subcomponents/Video";
 
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
@@ -10,18 +11,11 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
           key={trendingVideosData.id}
           className="card bg-dark text-light flex-lg-row flex-sm-column align-items-sm-center"
         >
-          <div style={{ textAlign: "center" }}>
-            <video
-              className="m-lg-5"
-              controls
-              width={trendingVideosData.videoMeta.width / 2}
-              height={trendingVideosData.videoMeta.height / 2}
-              src={trendingVideosData.videoUrl}
-              frameBorder="0"
-              allowFullScreen
-              title="Embedded video"
-            />
-          </div>
+          <Video
+            width={trendingVideosData.videoMeta.width / 2}
+            height={trendingVideosData.videoMeta.height / 2}
+            src={trendingVideosData.videoUrl}
+          />
           <div className="flex-column d-flex justify-content-center align-items-center w-100">
             <h2 className="card-title text-center mb-2 ">
               {trendingVideosData.text}
