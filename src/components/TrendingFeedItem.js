@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
 import Video from "./subcomponents/Video";
+import Author from "./subcomponents/Author";
 
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
@@ -21,23 +22,10 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
               {trendingVideosData.text}
             </h2>
             <Link to={"/" + trendingVideosData.authorMeta.name}>
-              {" "}
-              <div className="userData mt-2 mb-2 text-center">
-                <img
-                  style={{
-                    display: "inline",
-                    width: 60,
-                    height: "auto",
-                    marginRight: 10,
-                  }}
-                  className="rounded"
-                  src={trendingVideosData.authorMeta.avatar}
-                  alt={trendingVideosData.authorMeta.nickName}
-                />
-                <h3 style={{ display: "inline" }} className="text-light">
-                  {trendingVideosData.authorMeta.nickName}
-                </h3>
-              </div>
+              <Author
+                avatar={trendingVideosData.authorMeta.avatar}
+                nickname={trendingVideosData.authorMeta.nickName}
+              />
             </Link>
             <div className="videoStats text-secondary mt-3">
               <h4>

@@ -2,20 +2,19 @@ import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
 import Video from "./subcomponents/Video";
 
-const VideoFeedItem = ({ userFeedServerData }) => {
+const UserFeedItem = ({ userFeedServerData }) => {
   return (
     <div className="bg-dark">
       {userFeedServerData.map((userFeedVideos) => (
         <div
           key={userFeedVideos.id}
-          className="card bg-dark text-light flex-lg-row flex-md-column flex-sm-column align-items-md-center align-items-sm-center"
+          className="card bg-dark text-light flex-lg-row flex-sm-column align-items-md-center align-items-sm-center"
         >
           <Video
             width={userFeedVideos.video.width / 2}
             height={userFeedVideos.video.height / 2}
             src={userFeedVideos.video.playAddr}
           />
-
           <div
             className="flex-column d-flex justify-content-center align-items-center"
             style={{ width: "100%" }}
@@ -57,7 +56,7 @@ const VideoFeedItem = ({ userFeedServerData }) => {
   );
 };
 
-VideoFeedItem.propTypes = {
+UserFeedItem.propTypes = {
   userFeedServerData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -66,4 +65,4 @@ VideoFeedItem.propTypes = {
   ).isRequired,
 };
 
-export default VideoFeedItem;
+export default UserFeedItem;

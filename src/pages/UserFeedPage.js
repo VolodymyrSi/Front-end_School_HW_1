@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import { Context } from "../App";
-import VideoFeedItem from "../components/UserFeedItem";
+import UserFeedItem from "../components/UserFeedItem";
 import UserInfo from "../components/UserInfo";
 import { getUserInfoData } from "../api/apiRequest";
 import { MAX_POSTS } from "../constants";
@@ -42,7 +42,7 @@ const UserFeedPage = () => {
         <UserInfo {...userDataServerData} />
       )}
       {dummyUserData && (
-        <VideoFeedItem userFeedServerData={dummyUserData.slice(0, MAX_POSTS)} />
+        <UserFeedItem userFeedServerData={dummyUserData.slice(0, MAX_POSTS)} />
       )}
     </div>
   );
