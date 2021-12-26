@@ -1,6 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { createContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import UserFeedPage from "./pages/UserFeedPage";
 import TrendingFeedPage from "./pages/TrendingFeedPage";

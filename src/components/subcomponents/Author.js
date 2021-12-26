@@ -1,19 +1,17 @@
-const Author = (props) => {
+const Author = ({ avatar, nickname }) => {
   return (
     <div className="userData mt-2 mb-2 text-center">
       <img
+        className="d-inline h-auto rounded"
         style={{
-          display: "inline",
           width: 60,
-          height: "auto",
           marginRight: 10,
         }}
-        className="rounded"
-        src={props.avatar}
-        alt={props.nickname}
+        src={avatar}
+        alt={nickname}
       />
       <h3 style={{ display: "inline" }} className="text-light">
-        {props.nickname}
+        {nickname}
       </h3>
     </div>
   );

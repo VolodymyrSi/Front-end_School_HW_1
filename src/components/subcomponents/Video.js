@@ -1,14 +1,12 @@
 const Video = (props) => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="text-center">
       <video
         className="m-lg-5"
         controls
         width={props.width}
         height={props.height}
         src={props.src}
-        frameBorder="0"
-        allowFullScreen
         title="Embedded video"
       />
     </div>
