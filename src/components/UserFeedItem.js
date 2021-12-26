@@ -1,6 +1,7 @@
 import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
 import Video from "./subcomponents/Video";
+import Author from "./subcomponents/Author";
 
 const UserFeedItem = ({ userFeedServerData }) => {
   return (
@@ -22,22 +23,10 @@ const UserFeedItem = ({ userFeedServerData }) => {
             <h2 className="card-title text-center mb-2 ">
               {userFeedVideos.desc}
             </h2>
-            <div className="userData mt-2 mb-2 text-center">
-              <img
-                style={{
-                  display: "inline",
-                  width: 60,
-                  height: "auto",
-                  marginRight: 10,
-                }}
-                className="rounded"
-                src={userFeedVideos.author.avatarThumb}
-                alt={userFeedVideos.author.nickname}
-              />
-              <h3 style={{ display: "inline" }} className="text-light">
-                {userFeedVideos.author.nickname}
-              </h3>
-            </div>
+            <Author
+              avatar={userFeedVideos.author.avatarThumb}
+              nickname={userFeedVideos.author.nickname}
+            ></Author>
             <div className="videoStats text-secondary mt-3">
               <h4>
                 {"❤️ Likes: " +
