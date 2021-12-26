@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
 import Video from "./subcomponents/Video";
 import Author from "./subcomponents/Author";
+import Stats from "./subcomponents/Stats";
 
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
@@ -27,15 +27,10 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
                 nickname={trendingVideosData.authorMeta.nickName}
               />
             </Link>
-            <div className="videoStats text-secondary mt-3">
-              <h4>
-                {"❤️ Likes: " + numberWithCommas(trendingVideosData.diggCount)}
-              </h4>
-              <h4>
-                {"💭 Comments: " +
-                  numberWithCommas(trendingVideosData.commentCount)}
-              </h4>
-            </div>
+            <Stats
+              likes={trendingVideosData.diggCount}
+              comments={trendingVideosData.commentCount}
+            />
           </div>
         </div>
       ))}

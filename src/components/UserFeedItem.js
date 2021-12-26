@@ -1,7 +1,7 @@
-import { numberWithCommas } from "../utils/helper";
 import PropTypes from "prop-types";
 import Video from "./subcomponents/Video";
 import Author from "./subcomponents/Author";
+import Stats from "./subcomponents/Stats";
 
 const UserFeedItem = ({ userFeedServerData }) => {
   return (
@@ -26,18 +26,12 @@ const UserFeedItem = ({ userFeedServerData }) => {
             <Author
               avatar={userFeedVideos.author.avatarThumb}
               nickname={userFeedVideos.author.nickname}
-            ></Author>
-            <div className="videoStats text-secondary mt-3">
-              <h4>
-                {"❤️ Likes: " +
-                  numberWithCommas(userFeedVideos.stats.diggCount)}
-              </h4>
-              <h4>
-                {"💭 Comments: " +
-                  numberWithCommas(userFeedVideos.stats.commentCount)}
-              </h4>
-              <h4>{"📺 Views: " + userFeedVideos.stats.playCount}</h4>
-            </div>
+            />
+            <Stats
+              likes={userFeedVideos.stats.diggCount}
+              comments={userFeedVideos.stats.commentCount}
+              views={userFeedVideos.stats.playCount}
+            />
           </div>
         </div>
       ))}
