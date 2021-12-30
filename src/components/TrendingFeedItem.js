@@ -21,7 +21,7 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
             <h2 className="card-title text-center mb-2 ">
               {trendingVideosData.text}
             </h2>
-            <Link to={"/" + trendingVideosData.authorMeta.name}>
+            <Link to={`/${trendingVideosData.authorMeta.name}`}>
               <Author
                 avatar={trendingVideosData.authorMeta.avatar}
                 nickname={trendingVideosData.authorMeta.nickName}
