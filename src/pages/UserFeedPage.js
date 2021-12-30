@@ -2,15 +2,15 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
-import { Context } from "../App";
 import UserFeedItem from "../components/UserFeedItem";
 import UserInfo from "../components/UserInfo";
 import { getUserInfoData } from "../api/apiRequest";
 import LoadingSpinner from "../utils/LoadingSpinner";
+import { TikTukContext } from "../context";
 
 const UserFeedPage = () => {
   const max_posts = 29;
-  const { setIsLoading, isLoading } = useContext(Context);
+  const { setIsLoading, isLoading } = useContext(TikTukContext);
   const parameters = useParams();
 
   const [userDataFromServer, setUserDataFromServer] = useState({});

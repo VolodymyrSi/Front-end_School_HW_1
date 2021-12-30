@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import { Context } from "../App";
+import { TikTukContext } from "../App";
 import TrendingFeedItem from "../components/TrendingFeedItem";
 import { getTrendingFeedData } from "../api/apiRequest";
 import LoadingSpinner from "../utils/LoadingSpinner";
 
 const TrendingFeedPage = () => {
-  const { setIsLoading, isLoading } = useContext(Context);
+  const { setIsLoading, isLoading } = useContext(TikTukContext);
   const [trendingFeedServerData, setTrendingFeedServerData] = useState([]);
 
   useEffect(() => {
