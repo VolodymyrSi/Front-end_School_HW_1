@@ -36,9 +36,18 @@ const UserFeedPage = () => {
 
   return (
     <div>
-      {isLoading ? <LoadingSpinner /> : <UserInfo {...userDataFromServer} />}
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <UserInfo
+          user={userDataFromServer.user}
+          stats={userDataFromServer.stats}
+        />
+      )}
       {dummyUserDataVideos && (
-        <UserFeedItem userFeedServerData={dummyUserDataVideos.slice(0, MAX_POSTS)} />
+        <UserFeedItem
+          userFeedServerData={dummyUserDataVideos.slice(0, MAX_POSTS)}
+        />
       )}
     </div>
   );
