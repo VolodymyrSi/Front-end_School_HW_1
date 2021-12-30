@@ -1,4 +1,5 @@
 const Video = (props) => {
+    console.log(props);
   return (
     <div className="text-center">
       <video
@@ -13,4 +14,4 @@ const Video = (props) => {
   );
 };
 
-export default Video();
+export default Video;

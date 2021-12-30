@@ -16,7 +16,6 @@ function App() {
           <Route path="/" element={<TrendingFeedPage />} />
           <Route path="/:currentUser" element={<UserFeedPage />} />
         </Routes>
-        )}
       </div>
     </Context.Provider>
   );

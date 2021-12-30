@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userApi } from "../api/api";
+import { userApi } from "./api";
 
 const REQUEST_OPTIONS_TRENDING_FEED = {
   method: "GET",
