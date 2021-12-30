@@ -3,7 +3,6 @@ import Video from "./subcomponents/Video";
 import Author from "./subcomponents/Author";
 import Stats from "./subcomponents/Stats";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const UserFeedItem = ({ userFeedServerData }) => {
   return (

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { numberWithCommas } from "../utils/helper";
 
 const UserInfo = ({ user, stats }) => {
   return (
@@ -12,10 +11,10 @@ const UserInfo = ({ user, stats }) => {
       )}
       {stats && (
         <div className="ml-3">
-          <p>{`⬅️ Followers: ${numberWithCommas(stats.followerCount)}`}</p>
-          <p>{`➡️ Following: ${numberWithCommas(stats.followingCount)}`}</p>
-          <p>{`❤️ Total likes: ${numberWithCommas(stats.heartCount)}`}</p>
-          <p>{`🎥 Total videos: ${numberWithCommas(stats.videoCount)}`}</p>
+          <p>{`⬅️ Followers: ${stats.followerCount.toLocaleString()}`}</p>
+          <p>{`➡️ Following: ${stats.followingCount.toLocaleString()}`}</p>
+          <p>{`❤️ Total likes: ${stats.heartCount.toLocaleString()}`}</p>
+          <p>{`🎥 Total videos: ${stats.videoCount.toLocaleString()}`}</p>
         </div>
       )}
     </div>
