@@ -13,14 +13,14 @@ const UserFeedPage = () => {
   const { setIsLoading, isLoading } = useContext(Context);
   const params = useParams();
 
-  const [userDataServerData, setUserDataServerData] = useState({});
-  const [dummyUserData, setDummyUserData] = useState([]);
+  const [userDataFromServer, setUserDataFromServer] = useState({});
+  const [dummyUserDataVideos, setDummyUserDataVideos] = useState([]);
 
   useEffect(() => {
     axios
       .get("./user-feed.json")
       .then((res) => {
-        setDummyUserData(res.data.itemList);
+        setDummyUserDataVideos(res.data.itemList);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -28,7 +28,7 @@ const UserFeedPage = () => {
   useEffect(() => {
     if (params.currentUser) {
       getUserInfoData(params.currentUser).then((userInfoData) => {
-        setUserDataServerData(userInfoData);
+        setUserDataFromServer(userInfoData);
         setIsLoading(false);
       });
     }
@@ -36,13 +36,9 @@ const UserFeedPage = () => {
 
   return (
     <div>
-      {isLoading ? (
-          <LoadingSpinner/>
-      ) : (
-        <UserInfo {...userDataServerData} />
-      )}
-      {dummyUserData && (
-        <UserFeedItem userFeedServerData={dummyUserData.slice(0, MAX_POSTS)} />
+      {isLoading ? <LoadingSpinner /> : <UserInfo {...userDataFromServer} />}
+      {dummyUserDataVideos && (
+        <UserFeedItem userFeedServerData={dummyUserDataVideos.slice(0, MAX_POSTS)} />
       )}
     </div>
   );
