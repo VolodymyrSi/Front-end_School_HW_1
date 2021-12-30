@@ -6,12 +6,12 @@ import { Context } from "../App";
 import UserFeedItem from "../components/UserFeedItem";
 import UserInfo from "../components/UserInfo";
 import { getUserInfoData } from "../api/apiRequest";
-import { MAX_POSTS } from "../constants";
 import LoadingSpinner from "../utils/LoadingSpinner";
 
 const UserFeedPage = () => {
+  const max_posts = 29;
   const { setIsLoading, isLoading } = useContext(Context);
-  const params = useParams();
+  const parameters = useParams();
 
   const [userDataFromServer, setUserDataFromServer] = useState({});
   const [dummyUserDataVideos, setDummyUserDataVideos] = useState([]);
@@ -22,17 +22,17 @@ const UserFeedPage = () => {
       .then((res) => {
         setDummyUserDataVideos(res.data.itemList);
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
-    if (params.currentUser) {
-      getUserInfoData(params.currentUser).then((userInfoData) => {
+    if (parameters.currentUser) {
+      getUserInfoData(parameters.currentUser).then((userInfoData) => {
         setUserDataFromServer(userInfoData);
         setIsLoading(false);
       });
     }
-  }, [params]);
+  }, [parameters]);
 
   return (
     <div>
@@ -40,13 +40,13 @@ const UserFeedPage = () => {
         <LoadingSpinner />
       ) : (
         <UserInfo
-          user={userDataFromServer.user}
           stats={userDataFromServer.stats}
+          user={userDataFromServer.user}
         />
       )}
       {dummyUserDataVideos && (
         <UserFeedItem
-          userFeedServerData={dummyUserDataVideos.slice(0, MAX_POSTS)}
+          userFeedServerData={dummyUserDataVideos.slice(0, max_posts)}
         />
       )}
     </div>

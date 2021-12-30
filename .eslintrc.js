@@ -9,6 +9,7 @@ module.exports = {
     "import/ignore": ["node_modules"],
   },
   rules: {
+    "react/react-in-jsx-scope": "off",
     "react/jsx-newline": [1, { prevent: true }],
     "react/jsx-max-depth": [2, { max: 9 }],
     "react/jsx-no-literals": [1],

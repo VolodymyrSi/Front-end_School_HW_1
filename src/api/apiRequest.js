@@ -24,10 +24,10 @@ const REQUEST_OPTIONS_USER_FEED = (userID) => {
 export const getUserInfoData = (currentUser) => {
   return axios
     .request(REQUEST_OPTIONS_USER_FEED(currentUser))
-    .then(function (response) {
+    .then((response) => {
       return response.data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.error(error);
     });
 };
@@ -35,9 +35,9 @@ export const getUserInfoData = (currentUser) => {
 export const getTrendingFeedData = () =>
   axios
     .request(REQUEST_OPTIONS_TRENDING_FEED)
-    .then(function (response) {
+    .then((response) => {
       return response.data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.error(error);
     });
