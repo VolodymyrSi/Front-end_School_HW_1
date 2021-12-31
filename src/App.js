@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./reset.css";
@@ -8,8 +8,12 @@ import { TikTukContext } from "./context";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const contextValues = useMemo(
+    () => ({ isLoading, setIsLoading }),
+    [isLoading, setIsLoading]
+  );
   return (
-    <TikTukContext.Provider value={{ isLoading, setIsLoading }}>
+    <TikTukContext.Provider value={contextValues}>
       <div className="App">
         <Routes>
           <Route element={<TrendingFeedPage />} path="/" />
