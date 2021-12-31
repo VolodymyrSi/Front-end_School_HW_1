@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { TikTukContext } from "../App";
+import { TikTukContext } from "../context";
 import TrendingFeedItem from "../components/TrendingFeedItem";
 import { getTrendingFeedData } from "../api/apiRequest";
 import LoadingSpinner from "../utils/LoadingSpinner";
