@@ -9,7 +9,7 @@ import LoadingSpinner from "../utils/LoadingSpinner";
 import { TikTukContext } from "../context";
 
 const UserFeedPage = () => {
-  const max_posts = 29;
+  const maxPosts = 29;
   const { setIsLoading, isLoading } = useContext(TikTukContext);
   const parameters = useParams();
 
@@ -19,18 +19,20 @@ const UserFeedPage = () => {
   useEffect(() => {
     axios
       .get("./user-feed.json")
-      .then((res) => {
-        setDummyUserDataVideos(res.data.itemList);
+      .then((response) => {
+        setDummyUserDataVideos(response.data.itemList);
       })
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     if (parameters.currentUser) {
-      getUserInfoData(parameters.currentUser).then((userInfoData) => {
-        setUserDataFromServer(userInfoData);
-        setIsLoading(false);
-      });
+      getUserInfoData(parameters.currentUser)
+        .then((userInfoData) => {
+          setUserDataFromServer(userInfoData);
+          setIsLoading(false);
+        })
+        .catch((error) => console.log(error));
     }
   }, [parameters]);
 
@@ -46,7 +48,7 @@ const UserFeedPage = () => {
       )}
       {dummyUserDataVideos && (
         <UserFeedItem
-          userFeedServerData={dummyUserDataVideos.slice(0, max_posts)}
+          userFeedServerData={dummyUserDataVideos.slice(0, maxPosts)}
         />
       )}
     </div>

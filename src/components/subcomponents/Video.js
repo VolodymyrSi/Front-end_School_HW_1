@@ -1,13 +1,13 @@
-const Video = (properties) => {
+const Video = ({ height, src, width }) => {
   return (
     <div className="text-center">
       <video
         className="m-lg-5"
         controls
-        height={properties.height}
-        src={properties.src}
+        height={height}
+        src={src}
         title="Embedded video"
-        width={properties.width}
+        width={width}
       />
     </div>
   );
