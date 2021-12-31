@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Stats = ({ likes, comments, views }) => {
   return (
     <div className="videoStats text-secondary mt-3">
@@ -6,6 +8,12 @@ const Stats = ({ likes, comments, views }) => {
       {views && <h4>{`📺 Views: ${views}`}</h4>}
     </div>
   );
+};
+
+Stats.propTypes = {
+  comments: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
 };
 
 export default Stats;

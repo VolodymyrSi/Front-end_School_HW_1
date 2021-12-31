@@ -1,22 +1,21 @@
 import axios from "axios";
-import userApi from "./api";
 
 const REQUEST_OPTIONS_TRENDING_FEED = {
   method: "GET",
-  url: "https://tiktok33.p.rapidapi.com/trending/feed",
+  url: process.env.REACT_APP_TRENDING_FEED_URL,
   headers: {
-    "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-    "x-rapidapi-key": userApi,
+    "x-rapidapi-host": process.env.REACT_APP_HOST,
+    "x-rapidapi-key": process.env.REACT_APP_API,
   },
 };
 
 const REQUEST_OPTIONS_USER_FEED = (userID) => {
   return {
     method: "GET",
-    url: `https://tiktok33.p.rapidapi.com/user/info/${userID}`,
+    url: `${process.env.REACT_APP_USER_FEED_URL}${userID}`,
     headers: {
-      "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-      "x-rapidapi-key": userApi,
+      "x-rapidapi-host": process.env.REACT_APP_HOST,
+      "x-rapidapi-key": process.env.REACT_APP_API,
     },
   };
 };

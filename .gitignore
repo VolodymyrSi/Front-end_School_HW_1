@@ -1,3 +1,4 @@
 src/api/api.js
 .idea
 .DS_Store
+.env

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import UserInfo from "../UserInfo";
 
 const Author = ({ avatar, nickname }) => {
   return (
