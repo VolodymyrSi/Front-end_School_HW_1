@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import UserInfo from "../UserInfo";
+
 const Author = ({ avatar, nickname }) => {
   return (
     <div className="userData mt-2 mb-2 text-center">
@@ -15,6 +18,11 @@ const Author = ({ avatar, nickname }) => {
       </h3>
     </div>
   );
+};
+
+Author.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  nickname: PropTypes.string.isRequired,
 };
 
 export default Author;

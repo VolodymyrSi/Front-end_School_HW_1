@@ -22,12 +22,6 @@ const UserInfo = ({ user, stats }) => {
 };
 
 UserInfo.propTypes = {
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatarLarger: PropTypes.string.isRequired,
-      nickname: PropTypes.string.isRequired,
-    })
-  ).isRequired,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       followerCount: PropTypes.string.isRequired,
@@ -36,6 +30,12 @@ UserInfo.propTypes = {
       videoCount: PropTypes.string.isRequired,
     })
   ),
+  user: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatarLarger: PropTypes.string.isRequired,
+      nickname: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default UserInfo;
