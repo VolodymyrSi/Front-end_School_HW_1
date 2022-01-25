@@ -16,7 +16,7 @@ const TrendingFeedPage = () => {
       setTrendingFeedServerData(trendingFeedData);
       setIsLoading(false);
     });
-  }, [isLoading]);
+  }, []);
 
   return (
     <div>
