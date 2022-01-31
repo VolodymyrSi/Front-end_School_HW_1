@@ -16,9 +16,9 @@ const Video = ({ height, src, width }) => {
 };
 
 Video.propTypes = {
-  height: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
-  width: PropTypes.object.isRequired,
+  width: PropTypes.number.isRequired,
 };
 
 export default Video;

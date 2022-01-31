@@ -3,10 +3,10 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import UserFeedItem from "../components/UserFeedItem";
-import UserInfo from "../components/UserInfo";
-import { getUserInfoData } from "../api/apiRequest";
-import LoadingSpinner from "../utils/LoadingSpinner";
-import { TikTukContext } from "../context";
+import UserInfo from "../features/UserInfo";
+import { getUserInfoData } from "../services";
+import LoadingSpinner from "../assets/LoadingSpinner";
+import { TikTukContext } from "../store/context";
 
 const UserFeedPage = () => {
   const maxPosts = 29;

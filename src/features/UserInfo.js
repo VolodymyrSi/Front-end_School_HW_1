@@ -22,20 +22,30 @@ const UserInfo = ({ user, stats }) => {
 };
 
 UserInfo.propTypes = {
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      followerCount: PropTypes.string.isRequired,
-      followingCount: PropTypes.string.isRequired,
-      heartCount: PropTypes.string.isRequired,
-      videoCount: PropTypes.string.isRequired,
-    })
-  ),
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatarLarger: PropTypes.string.isRequired,
-      nickname: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  stats: PropTypes.shape({
+    followerCount: PropTypes.string.isRequired,
+    followingCount: PropTypes.string.isRequired,
+    heartCount: PropTypes.string.isRequired,
+    videoCount: PropTypes.string.isRequired,
+  }),
+  user: PropTypes.shape({
+    avatarLarger: PropTypes.string.isRequired,
+    nickname: PropTypes.string.isRequired,
+  }),
+};
+
+UserInfo.defaultProps = {
+  stats: {
+    followerCount: "no data",
+    followingCount: "no data",
+    heartCount: "no data",
+    videoCount: "no data",
+  },
+  user: {
+    nickname: "John Doe",
+    avatarLarger:
+      "https://pbs.twimg.com/profile_images/1326707048478892033/Ln0v50LP_400x400.jpg",
+  },
 };
 
 export default UserInfo;

@@ -24,4 +24,10 @@ Author.propTypes = {
   nickname: PropTypes.string.isRequired,
 };
 
+Author.defaultProps = {
+  avatar:
+    "https://pbs.twimg.com/profile_images/1326707048478892033/Ln0v50LP_400x400.jpg",
+  nickname: "John Doe",
+};
+
 export default Author;

@@ -16,4 +16,10 @@ Stats.propTypes = {
   views: PropTypes.number.isRequired,
 };
 
+Stats.defaultProps = {
+  comments: 'no data',
+  likes: 'no data',
+  views: 'no data'
+}
+
 export default Stats;

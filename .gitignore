@@ -3,3 +3,4 @@ src/api/api.js
 .DS_Store
 .env
 node_modules
+coverage

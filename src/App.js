@@ -1,10 +1,9 @@
 import { useMemo, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./reset.css";
 import UserFeedPage from "./pages/UserFeedPage";
 import TrendingFeedPage from "./pages/TrendingFeedPage";
-import { TikTukContext } from "./context";
+import { TikTukContext } from "./store/context";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
