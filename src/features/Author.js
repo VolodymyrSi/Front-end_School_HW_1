@@ -20,8 +20,8 @@ const Author = ({ avatar, nickname }) => {
 };
 
 Author.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  nickname: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
+  nickname: PropTypes.string,
 };
 
 Author.defaultProps = {
