@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
-import Video from "../features/Video";
-import Author from "../features/Author";
-import Stats from "../features/Stats";
+import { Author, Stats, Video } from "@volodymyrsi/component-library";
 
 const UserFeedItem = ({ userFeedServerData }) => {
   return (

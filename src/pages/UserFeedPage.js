@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-
+import { LoadingSpinner } from "@volodymyrsi/component-library";
 import UserFeedItem from "../components/UserFeedItem";
 import UserInfo from "../features/UserInfo";
 import { getUserInfoData } from "../services";
-import LoadingSpinner from "../assets/LoadingSpinner";
 import { TikTukContext } from "../store/context";
 
 const UserFeedPage = () => {
