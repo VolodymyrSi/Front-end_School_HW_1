@@ -11,15 +11,15 @@ const Stats = ({ likes, comments, views }) => {
 };
 
 Stats.propTypes = {
-  comments: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
+  comments: PropTypes.number,
+  likes: PropTypes.number,
+  views: PropTypes.number,
 };
 
 Stats.defaultProps = {
-  comments: 'no data',
-  likes: 'no data',
-  views: 'no data'
-}
+  comments: "no data",
+  likes: "no data",
+  views: "no data",
+};
 
 export default Stats;

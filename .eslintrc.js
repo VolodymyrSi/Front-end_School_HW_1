@@ -166,7 +166,7 @@ module.exports = {
     "more/no-duplicated-chains": 2,
     "more/classbody-starts-with-newline": [2, "never"],
     "more/no-hardcoded-password": 2,
-    "more/no-hardcoded-configuration-data": 2,
+    "more/no-hardcoded-configuration-data": 0,
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off"

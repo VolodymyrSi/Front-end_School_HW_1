@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
+import { Author, Stats, Video } from "@volodymyrsi/component-library";
 import PropTypes, { number } from "prop-types";
 import { Card } from "react-bootstrap";
-import Video from "../features/Video";
-import Author from "../features/Author";
-import Stats from "../features/Stats";
 
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
