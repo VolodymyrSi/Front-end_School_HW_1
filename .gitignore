@@ -1,0 +1,6 @@
+src/api/api.js
+.idea
+.DS_Store
+.env
+node_modules
+coverage
