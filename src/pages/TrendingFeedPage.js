@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import { TikTukContext } from "../context";
+import { TikTukContext } from "../store/context";
 import TrendingFeedItem from "../components/TrendingFeedItem";
-import { getTrendingFeedData } from "../api/apiRequest";
-import LoadingSpinner from "../utils/LoadingSpinner";
+import { getTrendingFeedData } from "../services";
+import LoadingSpinner from "../assets/LoadingSpinner";
 
 const TrendingFeedPage = () => {
   const { setIsLoading, isLoading } = useContext(TikTukContext);
@@ -16,7 +16,7 @@ const TrendingFeedPage = () => {
       setTrendingFeedServerData(trendingFeedData);
       setIsLoading(false);
     });
-  }, [isLoading]);
+  }, []);
 
   return (
     <div>
