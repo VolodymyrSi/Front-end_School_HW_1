@@ -5,7 +5,7 @@ module.exports = {
   extends: ["react-app", "airbnb", "prettier", "plugin:react/all"],
   plugins: ["prettier", "import", "unicorn", "promise", "more", "react"],
   settings: {
-    "import/extensions": [".js", ".jsx"],
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/ignore": ["node_modules"],
   },
   rules: {
@@ -36,7 +36,7 @@ module.exports = {
     "react/jsx-filename-extension": [
       "warn",
       {
-        extensions: [".js", ".jsx"],
+        extensions: [".js", ".jsx", "ts", "tsx"],
       },
     ],
     "prettier/prettier": ["error"],

@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const getUserInfoData = async (currentUser) => {
+const getUserInfoData = async () => {
   try {
     const response = await axios.get("userFeed.json");
-    console.log(currentUser);
     return response.data;
   } catch (error) {
     console.error(error);

@@ -1,10 +1,10 @@
 import Enzyme, { shallow } from "enzyme";
-import Stats from "../../features/Stats";
 import Adapter from "enzyme-adapter-react-16";
+import Stats from "../../features/Stats.tsx";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const props = {
+const properties = {
   comments: 1,
   views: 2,
   likes: 3,
@@ -14,7 +14,7 @@ const setUp = (props) => shallow(<Stats {...props} />);
 
 describe("Author components tests", () => {
   describe("Has props", () => {
-    const component = setUp(props);
+    const component = setUp(properties);
     it("should render Author component", () => {
       const stats = component.find(".videoStats");
       expect(stats).toHaveLength(1);

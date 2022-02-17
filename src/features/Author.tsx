@@ -1,11 +1,14 @@
-import PropTypes from "prop-types";
 import sampleAvatar from "../assets/img.png";
 
-const Author = ({ nickname }) => {
+interface AuthorProperties {
+  nickname: string;
+}
+
+const Author = ({ nickname }: AuthorProperties) => {
   return (
     <div className="userData mt-2 mb-2 text-center">
       <img
-        alt={nickname}
+        alt="user"
         className="d-inline h-auto rounded"
         src={sampleAvatar}
         style={{
@@ -13,19 +16,11 @@ const Author = ({ nickname }) => {
           marginRight: 10,
         }}
       />
-      <h3 className="text-light" style={{ display: "inline" }}>
-        {nickname}
-      </h3>
+      <h4 className="text-light" style={{ display: "inline" }}>
+        {nickname || "John Doe"}
+      </h4>
     </div>
   );
-};
-
-Author.propTypes = {
-  nickname: PropTypes.string,
-};
-
-Author.defaultProps = {
-  nickname: "John Doe",
 };
 
 export default Author;

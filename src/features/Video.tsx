@@ -1,6 +1,10 @@
-import PropTypes from "prop-types";
+interface VideoProperties {
+  height: number;
+  src: string;
+  width: number;
+}
 
-const Video = ({ height, src, width }) => {
+const Video = ({ height, src, width }: VideoProperties) => {
   return (
     <div className="text-center">
       <video
@@ -13,12 +17,6 @@ const Video = ({ height, src, width }) => {
       />
     </div>
   );
-};
-
-Video.propTypes = {
-  height: PropTypes.number.isRequired,
-  src: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
 };
 
 export default Video;

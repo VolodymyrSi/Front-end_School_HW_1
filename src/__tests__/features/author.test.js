@@ -1,5 +1,5 @@
 import Enzyme, { shallow } from "enzyme";
-import Author from "../../features/Author";
+import Author from "../../features/Author.tsx";
 import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });

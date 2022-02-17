@@ -1,5 +1,5 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import TrendingFeedPage from "../../pages/TrendingFeedPage";
+import TrendingFeedPage from "../../pages/TrendingFeedPage.tsx";
 import Adapter from "enzyme-adapter-react-16";
 import { TikTukContext } from "../../store/context";
 

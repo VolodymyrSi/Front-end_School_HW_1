@@ -1,6 +1,21 @@
-import PropTypes from "prop-types";
+interface UserTypes {
+  nickname: string;
+  avatarLarger: string;
+}
 
-const UserInfo = ({ user, stats }) => {
+interface StatsTypes {
+  followerCount: string;
+  followingCount: string;
+  heartCount: string;
+  videoCount: string;
+}
+
+interface UserInfoProperties {
+  user?: UserTypes;
+  stats?: StatsTypes;
+}
+
+const UserInfo = ({ user, stats }: UserInfoProperties) => {
   return (
     <div className="bg-dark text-light d-flex align-items-center justify-content-center p-3 flex-column flex-md-row">
       {user && (
@@ -25,25 +40,12 @@ const UserInfo = ({ user, stats }) => {
   );
 };
 
-UserInfo.propTypes = {
-  stats: PropTypes.shape({
-    followerCount: PropTypes.string.isRequired,
-    followingCount: PropTypes.string.isRequired,
-    heartCount: PropTypes.string.isRequired,
-    videoCount: PropTypes.string.isRequired,
-  }),
-  user: PropTypes.shape({
-    avatarLarger: PropTypes.string.isRequired,
-    nickname: PropTypes.string.isRequired,
-  }),
-};
-
 UserInfo.defaultProps = {
   stats: {
-    followerCount: "no data",
-    followingCount: "no data",
-    heartCount: "no data",
-    videoCount: "no data",
+    followerCount: "I wish I could access a server",
+    followingCount: "I remember I could do things like that",
+    heartCount: "I do not feel connected...",
+    videoCount: "This must be some sort of punishment. Am I in hell?",
   },
   user: {
     nickname: "John Doe",

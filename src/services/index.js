@@ -1,3 +1,3 @@
-export { default as getTrendingFeedData } from "./feedRequest";
+export { default as getTrendingFeedData } from "./feedRequest.ts";
 
-export { default as getUserInfoData } from "./userRequest";
+export { default as getUserInfoData } from "./userRequest.ts";

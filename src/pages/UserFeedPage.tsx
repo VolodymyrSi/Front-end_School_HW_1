@@ -3,7 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import UserFeedItem from "../components/UserFeedItem";
-import UserInfo from "../features/UserInfo";
+// @ts-ignore
+import UserInfo from "../features/UserInfo.tsx";
 import { getUserInfoData } from "../services";
 import LoadingSpinner from "../assets/LoadingSpinner";
 import { TikTukContext } from "../store/context";
@@ -13,7 +14,10 @@ const UserFeedPage = () => {
   const { setIsLoading, isLoading } = useContext(TikTukContext);
   const parameters = useParams();
 
-  const [userDataFromServer, setUserDataFromServer] = useState({});
+  const [userDataFromServer, setUserDataFromServer] = useState({
+    stats: undefined,
+    user: undefined,
+  });
   const [dummyUserDataVideos, setDummyUserDataVideos] = useState([]);
 
   useEffect(() => {
@@ -28,11 +32,11 @@ const UserFeedPage = () => {
   useEffect(() => {
     if (parameters.currentUser) {
       getUserInfoData(parameters.currentUser)
-        .then((userInfoData) => {
+        .then((userInfoData: any) => {
           setUserDataFromServer(userInfoData);
           setIsLoading(false);
         })
-        .catch((error) => console.log(error));
+        .catch((error: any) => console.log(error));
     }
   }, [parameters]);
 

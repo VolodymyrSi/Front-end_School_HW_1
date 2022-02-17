@@ -1,6 +1,10 @@
-import PropTypes from "prop-types";
+interface StatsTypes {
+  likes: string;
+  comments: string;
+  views: string;
+}
 
-const Stats = ({ likes, comments, views }) => {
+const Stats = ({ likes, comments, views }: StatsTypes) => {
   return (
     <div className="videoStats text-secondary mt-3">
       <h4>{`❤️ Likes: ${likes.toLocaleString()}`}</h4>
@@ -8,18 +12,6 @@ const Stats = ({ likes, comments, views }) => {
       {views && <h4>{`📺 Views: ${views.toLocaleString()}`}</h4>}
     </div>
   );
-};
-
-Stats.propTypes = {
-  comments: PropTypes.number,
-  likes: PropTypes.number,
-  views: PropTypes.number,
-};
-
-Stats.defaultProps = {
-  comments: "no data",
-  likes: "no data",
-  views: "no data",
 };
 
 export default Stats;

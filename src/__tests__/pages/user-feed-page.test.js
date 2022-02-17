@@ -1,5 +1,5 @@
 import Enzyme, { shallow } from "enzyme";
-import UserFeedPage from "../../pages/UserFeedPage";
+import UserFeedPage from "../../pages/UserFeedPage.tsx";
 import Adapter from "enzyme-adapter-react-16";
 import { TikTukContext } from "../../store/context";
 

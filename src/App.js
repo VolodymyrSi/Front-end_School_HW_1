@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import UserFeedPage from "./pages/UserFeedPage";
-import TrendingFeedPage from "./pages/TrendingFeedPage";
+import UserFeedPage from "./pages/UserFeedPage.tsx";
+import TrendingFeedPage from "./pages/TrendingFeedPage.tsx";
 import { TikTukContext } from "./store/context";
 
 const App = () => {
