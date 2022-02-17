@@ -1,58 +1,19 @@
-# Genesis Front-end School Practice Task
+# Технічне Readme лежить у інших гілках
+# Це мої роздуми на тему зробленої роботи у вільній формі.
 
-### Technology used:
+#### У процесі роботи з "_продуктом_", що я сам зробив, протягом певного часу, зрозумів багато корисного для себе.
 
-- React functional components
-- React hooks: useState, useEffect
-- React Context
-- React Router
-- Axios
-- Bootstrap
+##### Дуже важливо стартувати з запасом на майбутнє. Коли я робив завдання восени ...
 
-### Details:
+ - Я використав Bootstrap, щоб максимально швидко отримати адаптивність для різних екранів. Це дійсно було швидко тоді, і дало змогу зосередитись на логічній частині. Зараз, коли дивишся, що сайт не естетичний (якщо так можна сказати), приходить розуміння, що ~~я лох в бутстрапі~~ бутстрап не в силах це вирішити. Змішувати його та власноруч написаний CSS це нормально, на мою думку, але не тоді, коли 98% стилів визначається ним, а ти хочеш змінити цю цифру до 20%, бо тобі нічого з того, що він дає, вже не подобається :) 
+ - Якби я знову робив це завдання в такому ж режимі, тобто з швидкими дедлайнами, я б теж використав готову лібу стилів, але пішов би в Ant Design. Я трошки працював з цією бібліотекою і вона здається мені дуже естетичною. Ось невелике тестове завдання, для якого я використував Ant Design, [якщо цікаво](https://github.com/VolodymyrSi/redux-typescript).
+ - Якщо мені б прийшлось робити щось не на швидку руку, а починати якісну розробку - я б працював з styled-components. Мені дуже сподобалась ця бібліотека для реакту, наскільки я зрозумів, у Vue такий підхід взагалі підтримується "з коробки". 
 
-The web app consists of 2 pages, which are provided by React Router. These are Trending page and user page.
+##### Іще я...
+- у першій версії зробив усе завдання у буквально чотирьох файлах та двох папках. Знову, це виглядало ок в режимі "зробити завдання за ніч", але це дуже поганий підхід для проекту який потрібно підтримувати та вдосконалювати. Тема архікетури супер складна, і навіть в межах такого маленького проекту важко обирати не те що структуру проекту, а назви папок і файлів. В цілому я задоволений тим, як зараз все організовано.
 
-|| Trending page | User page |
-|-----------| ----------- | ----------- |
-|Access type| homepage | via links |
-|Route| `website.com/` | `website.com/{username}` |
-|Components| Trending feed item | User feed item | User info |
-|Shared state| `isLoading` | `isLoading` |
+- однозначно почав би з typescript. Він дуже допомагає. Але не тоді, коли усе вже написано і наче як працює, а ти намагається його сконфігурувати, і він просто суне палки в колеса, а ти знаєш, що нових фіч не планується, і пишеш чергове **any** :)
 
+- продовжив користуватись контектом і не підключав redux. Вірю в те, що кількість boilerplate коду не виправдовує себе у таких мініатюрних проектах, за умови, якщо не стоїть на меті показати своє вміння користуватись власне redux-ом
 
-|   | Trending feed item   | User feed item  |  User info |
-|---|---|---|---|
-| Components include  | a number of videos based on server data  | 30 videos based on local data  | profile description based on server data |
-| Data source  |  Axios async request | local data stored in `public/user-feed.json`  | Axios async request |
-|  State |  `trendingFeedServerData` |  `dummyUserData`|  `userDataServerData` |
-
-
-
-_**Trending page** is the **home page**. It renders a number of videos based on server data. The data is received with `Axios` async request. The data is placed in a state called `trendingFeedServerData` upon page load with `useEffect` hook._
-
- _If **username** or **userimage** is clicked, React Router `Link` element will lead to user page. The URL depends on the username and is in the following format: 'websitename.com/username'. **Any** user profile can be accessed via this link by typing it in URL address bar, so profiles beyond trending page can be visited._
-
-_**User feed** page follows the same logics as **trending page**. However, it uses local data stored in `public/user-feed.json` to always display the same video._
-
-_**Context** stores `isLoading` state which will display Boostrap spinner to notify the user that the content is being fetched from server._
-
-### Styling
-
-Minimal styling is done with **Bootstrap** classes.
-
-### Responsiveness:
-
-The video sections toggle between row and column layout based on user screen size.
-
-
-### Extra detail:
-
-- Unused data at `./src/Unused_data/UserFeedServerData.js` stores functionality needed to render real videos from Userpage. It worked before something bad happened to API.
-
-- `Helper` function stored in `utils` folder uses a regular expression to add commas to likes and comments counters.
-
-### Future ideas:
-
-- [ ] Grid layout for desktop with 3 videos per row
-- [ ] Improved styling
+Ок, на цьому зупиняюсь, сподіваюсь, ця коротка _(я чомусь хотів написати "інтермісія", але тлумачний словник української мови сказав, що краще цим словом не користуватись, бо воно означає [не те](https://slovnyk.me/dict/vts/%D1%96%D0%BD%D1%82%D0%B5%D1%80%D0%BC%D1%96%D1%81%D1%96%D1%8F), чого я чекав)_ пауза дозволила трошки відпочити від споглядання коду.
