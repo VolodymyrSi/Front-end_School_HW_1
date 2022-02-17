@@ -2,11 +2,15 @@ import PropTypes from "prop-types";
 
 const UserInfo = ({ user, stats }) => {
   return (
-    <div className="bg-dark text-light d-flex align-items-center justify-content-center p-3">
+    <div className="bg-dark text-light d-flex align-items-center justify-content-center p-3 flex-column flex-md-row">
       {user && (
-        <div>
+        <div className="text-center">
           <h2 className="text-center">{user.nickname}</h2>
-          <img alt={user.nickname} className="w-200" src={user.avatarLarger} />
+          <img
+            alt={user.nickname}
+            className="w-50 mb-2"
+            src={user.avatarLarger}
+          />
         </div>
       )}
       {stats && (

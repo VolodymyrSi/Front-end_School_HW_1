@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import Video from "../features/Video";
 import Author from "../features/Author";
 import Stats from "../features/Stats";
+import sample from "../assets/sample.mp4";
 
 const UserFeedItem = ({ userFeedServerData }) => {
   return (
@@ -15,7 +16,7 @@ const UserFeedItem = ({ userFeedServerData }) => {
           <Card.Body>
             <Video
               height={userFeedVideos.video.height / 2}
-              src={userFeedVideos.video.playAddr}
+              src={sample}
               width={userFeedVideos.video.width / 2}
             />
             <Card.Title>{userFeedVideos.desc}</Card.Title>

@@ -32,7 +32,7 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
-    "jsx-a11y/media-has-caption": ["warn"],
+    "jsx-a11y/media-has-caption": ["off"],
     "react/jsx-filename-extension": [
       "warn",
       {

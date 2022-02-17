@@ -18,7 +18,7 @@ const UserFeedPage = () => {
 
   useEffect(() => {
     axios
-      .get("./user-feed.json")
+      .get("./userFeed.json")
       .then((response) => {
         setDummyUserDataVideos(response.data.itemList);
       })

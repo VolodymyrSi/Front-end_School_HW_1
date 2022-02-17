@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import Video from "../features/Video";
 import Author from "../features/Author";
 import Stats from "../features/Stats";
+import sample from "../assets/sample.mp4";
 
 const TrendingFeedItem = ({ trendingFeedServerData }) => {
   return (
@@ -16,7 +17,7 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
           <Card.Body>
             <Video
               height={trendingVideosData.videoMeta.height / 2}
-              src={trendingVideosData.videoUrl}
+              src={sample}
               width={trendingVideosData.videoMeta.width / 2}
             />
             <Card.Title>{trendingVideosData.text}</Card.Title>
@@ -29,6 +30,7 @@ const TrendingFeedItem = ({ trendingFeedServerData }) => {
             <Stats
               comments={trendingVideosData.commentCount}
               likes={trendingVideosData.diggCount}
+              views={trendingVideosData.playCount}
             />
           </Card.Body>
         </Card>
